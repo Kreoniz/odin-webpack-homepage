@@ -1,6 +1,11 @@
 @import url("./reset.scss");
 @import url("./fonts.scss");
 
+:root {
+  --container-width: 1200px;
+  --container-padding: 2rem;
+}
+
 body {
   font-family: "Space Grotesk";
 }
@@ -15,14 +20,14 @@ img {
   line-height: 2;
 }
 
-.container {
-  padding: 2rem;
-  max-width: 1200px;
+.container>* {
   margin: auto;
+  padding: var(--container-padding);
 }
 
 .container>*:not(:last-child) {
   margin-bottom: 4rem;
+  max-width: var(--container-width);
 }
 
 .about {
@@ -108,5 +113,68 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.footer {
+  background-color: black;
+  color: white;
+
+  &__wrapper {
+    max-width: var(--container-width);
+    margin: auto;
+
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__paragraph:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__image-container {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__email {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+
+  &__email-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__email-link {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__image {
+    object-fit: contain;
+    min-width: 100%;
+    box-shadow: 0px 0px 5px 2px white;
   }
 }
