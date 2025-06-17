@@ -8,13 +8,13 @@
   <body>
     <main class="container">
       <section class="about">
-        <div class="about__image-block">
+        <div class="about__image-block-desktop">
           <img
-            class="about__image"
+            class="about__image-desktop"
             src="./img/astronaut-lookout.jpg"
             alt="astronaut"
           />
-          <div class="about__name">Kreoniz</div>
+          <div class="about__name-desktop">Kreoniz</div>
         </div>
 
         <div class="about__block">
@@ -255,11 +255,21 @@
           </div>
 
           <div class="footer__image-container">
-            <img
-              class="footer__image"
-              src="./img/astronaut-on-rover.jpg"
-              alt="astronaut working"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="./img/astronaut-on-rover-cropped.jpg"
+              />
+              <source
+                media="(min-width: 769px)"
+                srcset="./img/astronaut-on-rover.jpg"
+              />
+              <img
+                class="footer__image"
+                src="./img/astronaut-on-rover.jpg"
+                alt="astronaut working"
+              />
+            </picture>
           </div>
         </div>
       </footer>
